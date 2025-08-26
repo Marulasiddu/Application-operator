@@ -1,0 +1,44 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: application-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Application is the Schema for the applications API.
+      displayName: Application
+      kind: Application
+      name: applications.application.example.com
+      version: v1alpha1
+  description: This is a simple operator for learning the kubernetes operators.
+  displayName: my-application
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - my-app
+  links:
+  - name: Application Operator
+    url: https://application-operator.domain
+  maturity: alpha
+  provider:
+    name: Marulasiddu
+  version: 0.0.0
