@@ -29,7 +29,7 @@ jobs:
           registry: quay.io
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
-          
+
       - name: Build and push to quay
         env:
           REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}   #${{ github.event.inputs.REGISTRY_NAMESPACE }} ${{ github.e }}
