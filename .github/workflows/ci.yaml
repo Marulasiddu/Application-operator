@@ -33,6 +33,7 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        
       - name: Build and push to quay
         env:
           REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}   #${{ github.event.inputs.REGISTRY_NAMESPACE }} ${{ github.e }}
