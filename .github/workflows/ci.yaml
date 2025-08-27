@@ -32,13 +32,12 @@ jobs:
 
       - name: Build and push to quay
         env:
-          REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}   #${{ github.event.inputs.REGISTRY_NAMESPACE }} ${{ github.e }}
+          REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}
           IMAGE_TAG: release-v1
           IMAGE_TAG_SHA: ${{ github.ref_name }}-${{ github.sha }}
           IMAGE_BUILD_CMD: docker 
         run: |
-        # set IMAGE_TAG to a calculated <branch>-<sha> if not specified
+          # set IMAGE_TAG to a calculated <branch>-<sha> if not specified
           export IMAGE_TAG=${IMAGE_TAG:-${IMAGE_TAG_SHA:0:-33}}
 
           make docker-build docker-push IMG=quay.io/${REGISTRY_NAMESPACE}/application-operator:${IMAGE_TAG}
-
