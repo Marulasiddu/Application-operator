@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: application-sample
+---
+apiVersion: application.example.com/v1alpha1
+kind: Application
+metadata:
+  name: application-sample
+  namespace: application-sample
+spec:
+  image: nginx:latest
+  replicas: 2
+  port: 80
