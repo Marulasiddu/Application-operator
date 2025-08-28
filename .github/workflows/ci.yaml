@@ -21,8 +21,7 @@ jobs:
   Build-and-Push:
     name: Build and Push to registry
     runs-on: ubuntu-latest
-    varibales:
-      BUILD_DATE=$(date +"%Y%m%d-%H%M%S") 
+    
     
     steps:
       - name: check out the repo
