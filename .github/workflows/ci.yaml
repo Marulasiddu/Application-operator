@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  BUILD_DATE: ${{ date +'%Y%m%d-%H%M%S' }}
+  BUILD_DATE: $(date +'%Y%m%d-%H%M%S')
   
 jobs:
   shellcheck:
