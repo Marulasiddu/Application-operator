@@ -1,12 +1,13 @@
 ---
 name: application-operator build and push 
 
-
-
 on: 
   push:
     branches:
       - main
+
+env:
+  BUILD_DATE: ${{ steps.set_build_date.outputs.date }}
   
 jobs:
   shellcheck:
