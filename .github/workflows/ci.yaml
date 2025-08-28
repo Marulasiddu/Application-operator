@@ -37,7 +37,7 @@ jobs:
       - name: Build and push to quay
         env:
           REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}
-          IMAGE_TAG: release-${{ BUILD_DATE }}
+          IMAGE_TAG: release-${{ env.BUILD_DATE }}
           IMAGE_TAG_SHA: ${{ github.ref_name }}-${{ github.sha }}
           IMAGE_BUILD_CMD: docker 
         run: |
