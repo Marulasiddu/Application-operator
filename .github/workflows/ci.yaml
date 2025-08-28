@@ -1,6 +1,9 @@
 ---
 name: application-operator build and push 
 
+varibales:
+  BUILD_DATE=$(date +"%Y%m%d-%H%M%S") 
+
 on: 
   push:
     branches:
@@ -33,7 +36,7 @@ jobs:
       - name: Build and push to quay
         env:
           REGISTRY_NAMESPACE: ${{ vars.REGISTRY_NAMESPACE }}
-          IMAGE_TAG: release-$$(git log -1 --pretty=%!H(MISSING))
+          IMAGE_TAG: release-${{ BUILD_DATE }}
           IMAGE_TAG_SHA: ${{ github.ref_name }}-${{ github.sha }}
           IMAGE_BUILD_CMD: docker 
         run: |
