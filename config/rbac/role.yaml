@@ -22,6 +22,7 @@ rules:
   - applications/finalizers
   verbs:
   - update
+  - watch
 - apiGroups:
   - application.example.com
   resources:
@@ -30,3 +31,4 @@ rules:
   - get
   - patch
   - update
+  - watch 
