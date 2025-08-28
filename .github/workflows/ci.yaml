@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  BUILD_DATE: ${{ steps.set_build_date.outputs.date }}
+  BUILD_DATE: ${{ date +'%Y%m%d-%H%M%S' }}
   
 jobs:
   shellcheck:
